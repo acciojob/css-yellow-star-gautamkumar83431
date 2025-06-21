@@ -1,5 +1,20 @@
 /*  your css code here. If applicable */
 .star {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  background-color: yellow;
+  /* Using clip-path to create a 5-point star */
+  clip-path: polygon(
+    50% 0%, /* Top point */
+    61% 35%, 98% 35%, /* Top right points */
+    68% 60%, 79% 95%, /* Bottom right points */
+    50% 75%, /* Bottom center point */
+    21% 95%, 32% 60%, /* Bottom left points */
+    2% 35%, 39% 35% /* Top left points */
+  );
+}
+
+.star {
   margin: 50px; 
   position: relative;
   display: block;
