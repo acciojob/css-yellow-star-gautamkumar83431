@@ -1,57 +1,28 @@
 /*  your css code here. If applicable */
-.star {
-  width: 100px; /* Adjust size as needed */
-  height: 100px; /* Adjust size as needed */
-  background-color: yellow;
-  /* Using clip-path to create a 5-point star */
-  clip-path: polygon(
-    50% 0%, /* Top point */
-    61% 35%, 98% 35%, /* Top right points */
-    68% 60%, 79% 95%, /* Bottom right points */
-    50% 75%, /* Bottom center point */
-    21% 95%, 32% 60%, /* Bottom left points */
-    2% 35%, 39% 35% /* Top left points */
-  );
-}
 
-.star {
-  margin: 50px; 
-  position: relative;
-  display: block;
-  color: yellow;
-  width: 0px;
-  height: 0px;
-  border-right: 50px solid transparent;
-  border-bottom: 35px solid yellow;
-  border-left: 50px solid transparent;
-  transform: rotate(35deg); 
-}
+    .star {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
 
-.star:before {
-  border-bottom: 40px solid yellow; 
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: -20px;
-  left: -32px;
-  display: block;
-  content: '';
-  transform: rotate(-35deg);
-}
+    .star::before,
+    .star::after {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: -34px;
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid yellow;
+      transform: rotate(0deg);
+    }
 
-.star:after {
-  position: absolute;
-  display: block;
-  color: yellow; 
-  top: 3px;
-  left: -50px;
-  width: 0px;
-  height: 0px;
-  border-right: 50px solid transparent;
-  border-bottom: 35px solid yellow; 
-  border-left: 50px solid transparent;
-  transform: rotate(-70deg);
-  content: '';
-}
+    .star::after {
+      top: -14px;
+      transform: rotate(180deg);
+    }
